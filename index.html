@@ -3,17 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>RODAR - Header BEM</title>
+  <title>RODAR - Catálogo y Comparador de Autos</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-  <!-- Bloque principal: header | Modificador: header--sticky -->
+  <!-- ================= HEADER (BEM) ================= -->
   <header class="header header--sticky">
     <div class="header__container">
-      
-      <!-- Marca / Logo -->
-      <a href="#" class="header__brand">
+      <a href="#inicio" class="header__brand" data-route="inicio">
         <span class="header__logo">
           <svg class="header__logo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
             <circle cx="12" cy="12" r="9"></circle>
@@ -26,43 +24,329 @@
         <span class="header__title">RODAR</span>
       </a>
 
-      <!-- Navegación central -->
       <nav class="header__nav" aria-label="Navegación principal">
         <ul class="header__menu">
-          <li class="header__item">
-            <a href="#" class="header__link">Inicio</a>
-          </li>
-          <li class="header__item">
-            <!-- Modificador de estado activo -->
-            <a href="#" class="header__link header__link--active">Catálogo</a>
-          </li>
-          <li class="header__item">
-            <a href="#" class="header__link">Comparar</a>
-          </li>
-          <li class="header__item">
-            <a href="#" class="header__link">Marcas</a>
-          </li>
-          <li class="header__item">
-            <a href="#" class="header__link">Tipos</a>
-          </li>
-          <li class="header__item">
-            <a href="#" class="header__link">Eléctricos</a>
-          </li>
+          <li class="header__item"><a href="#inicio" class="header__link" data-route="inicio">Inicio</a></li>
+          <li class="header__item"><a href="#catalogo" class="header__link header__link--active" data-route="catalogo">Catálogo</a></li>
+          <li class="header__item"><a href="#comparar" class="header__link" data-route="comparar">Comparar</a></li>
+          <li class="header__item"><a href="#marcas" class="header__link" data-route="marcas">Marcas</a></li>
+          <li class="header__item"><a href="#tipos" class="header__link" data-route="tipos">Tipos</a></li>
+          <li class="header__item"><a href="#electricos" class="header__link" data-route="electricos">Eléctricos</a></li>
         </ul>
       </nav>
 
-      <!-- Acción derecha: Favoritos con contador -->
       <div class="header__actions">
-        <button type="button" class="header__favorites" aria-label="Ver favoritos">
+        <button type="button" class="header__favorites" id="btnFavorites" aria-label="Ver favoritos">
           <svg class="header__favorites-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
           </svg>
-          <span class="header__badge">2</span>
+          <span class="header__badge" id="favBadge">2</span>
         </button>
       </div>
-
     </div>
   </header>
 
+  <main class="main">
+
+    <!-- ================= SECCIÓN 1: INICIO ================= -->
+    <section class="page page--hidden" id="view-inicio">
+      <div class="hero">
+        <div class="hero__container">
+          <div class="hero__content">
+            <span class="hero__eyebrow">• ENCUENTRA TU PRÓXIMO AUTO</span>
+            <h1 class="hero__title">El auto ideal <span class="hero__title--accent">sí existe.</span></h1>
+            <p class="hero__subtitle">Explora, descubre y compara sin distracciones. Información clara para elegir el auto que va contigo.</p>
+            <div class="hero__search">
+              <input type="text" class="hero__input" id="heroSearchInput" placeholder="Busca por marca o modelo">
+              <button type="button" class="hero__btn" id="heroSearchBtn">Explorar catálogo →</button>
+            </div>
+            <div class="hero__tags">
+              <span>Más buscados:</span>
+              <button type="button" class="hero__tag" data-quick-filter="RAV4">Toyota RAV4</button>
+              <button type="button" class="hero__tag" data-quick-filter="SUV">SUV híbridos</button>
+              <button type="button" class="hero__tag" data-quick-filter="Eléctrico">Autos eléctricos</button>
+            </div>
+          </div>
+          <div class="hero__visual">
+            <img class="hero__image" src="https://images.unsplash.com/photo-1617788138017-80ad40651399?auto=format&fit=crop&w=900&q=80" alt="Vehículo destacado">
+            <div class="hero__floating-card hero__floating-card--top">
+              <strong>Híbrido</strong>
+              <span>Consumo optimizado</span>
+            </div>
+            <div class="hero__floating-card hero__floating-card--bottom">
+              <span class="hero__score">9.2</span>
+              <span>Calificación de expertos</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Selección del mes (como en el video) -->
+      <div class="featured">
+        <div class="featured__header">
+          <div>
+            <span class="featured__eyebrow">SELECCIÓN DEL MES</span>
+            <h2 class="featured__title">Autos que vale la pena conocer</h2>
+          </div>
+          <a href="#catalogo" class="featured__all-link" data-route="catalogo">Ver catálogo completo →</a>
+        </div>
+        <div class="catalog__grid" id="featuredGrid"></div>
+      </div>
+
+      <div class="cta-banner">
+        <div class="cta-banner__card">
+          <img class="cta-banner__bg" src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1200&q=80" alt="Comparar modelos">
+          <div class="cta-banner__overlay">
+            <h2 class="cta-banner__title">¿Dudas entre dos modelos?</h2>
+            <p class="cta-banner__text">Compáralos lado a lado y descubre cuál encaja mejor con tu estilo de vida. Te mostramos lo bueno, lo mejorable y nuestra recomendación.</p>
+            <button type="button" class="cta-banner__btn" data-route="comparar">Empezar a comparar →</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= SECCIÓN 2: CATÁLOGO ================= -->
+    <section class="page" id="view-catalogo">
+      <div class="catalog">
+        <div class="catalog__header">
+          <span class="catalog__eyebrow">EXPLORA SIN LÍMITES</span>
+          <h1 class="catalog__title">Encuentra un auto que se sienta <span class="catalog__title--accent">tuyo.</span></h1>
+          <p class="catalog__subtitle">Compara características y descubre cuál encaja con tu vida. Aquí no encontrarás precios, solo información útil.</p>
+        </div>
+
+        <div class="filters">
+          <div class="filters__pills" id="categoryPills">
+            <button type="button" class="filters__pill filters__pill--active" data-type="Todos">Todos</button>
+            <button type="button" class="filters__pill" data-type="SUV">SUV</button>
+            <button type="button" class="filters__pill" data-type="Sedán">Sedán</button>
+            <button type="button" class="filters__pill" data-type="Pickup">Pickup</button>
+            <button type="button" class="filters__pill" data-type="Todoterreno">Todoterreno</button>
+            <button type="button" class="filters__pill" data-type="Crossover">Crossover</button>
+          </div>
+
+          <div class="filters__controls">
+            <input type="text" class="filters__search" id="catalogSearch" placeholder="Busca marca, modelo, tipo...">
+            <select class="filters__select" id="brandSelect">
+              <option value="Todas">Todas las marcas</option>
+              <option value="TOYOTA">Toyota</option>
+              <option value="HONDA">Honda</option>
+              <option value="MAZDA">Mazda</option>
+              <option value="HYUNDAI">Hyundai</option>
+              <option value="KIA">Kia</option>
+              <option value="TESLA">Tesla</option>
+            </select>
+            <select class="filters__select" id="fuelSelect">
+              <option value="Todos">Todos los motores</option>
+              <option value="Híbrido">Híbrido</option>
+              <option value="Gasolina">Gasolina</option>
+              <option value="Eléctrico">Eléctrico</option>
+            </select>
+          </div>
+
+          <div class="filters__status">
+            <span id="modelsCount">29 modelos seleccionados para explorar</span>
+            <button type="button" class="filters__reset" id="resetFiltersBtn">Limpiar filtros ×</button>
+          </div>
+        </div>
+
+        <div class="catalog__grid" id="catalogGrid"></div>
+        <div class="catalog__empty catalog__empty--hidden" id="catalogEmpty">
+          <p>No encontramos modelos con esa combinación de filtros.</p>
+          <button type="button" class="hero__btn" id="emptyResetBtn">Limpiar filtros</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= SECCIÓN 3: COMPARAR ================= -->
+    <section class="page page--hidden" id="view-comparar">
+      <div class="compare">
+        <div class="compare__header">
+          <span class="compare__eyebrow">COMPARA SIN COMPLICARTE</span>
+          <h1 class="compare__title">Dos caminos, una <span class="compare__title--accent">mejor decisión.</span></h1>
+          <p class="compare__subtitle">Elige hasta tres modelos. Nosotros ordenamos las diferencias y te ayudamos a identificar el ideal para ti.</p>
+        </div>
+
+        <div class="compare__selectors">
+          <div class="compare__slot">
+            <span class="compare__label">MODELO 1</span>
+            <select class="compare__select" id="compareSelect1"></select>
+          </div>
+          <div class="compare__slot">
+            <span class="compare__label">MODELO 2</span>
+            <select class="compare__select" id="compareSelect2"></select>
+          </div>
+          <div class="compare__slot">
+            <span class="compare__label">MODELO 3 (OPCIONAL)</span>
+            <select class="compare__select" id="compareSelect3"></select>
+          </div>
+        </div>
+
+        <div class="compare__table-wrapper">
+          <table class="compare__table" id="compareTable"></table>
+        </div>
+
+        <div class="verdict" id="verdictBox"></div>
+      </div>
+    </section>
+
+    <!-- ================= SECCIÓN 4: MARCAS ================= -->
+    <section class="page page--hidden" id="view-marcas">
+      <div class="brands">
+        <div class="brands__header">
+          <span class="brands__eyebrow">UN MUNDO DE OPCIONES</span>
+          <h1 class="brands__title">Conoce las marcas, <span class="brands__title--accent">encuentra tu estilo.</span></h1>
+          <p class="brands__subtitle">Cada fabricante tiene una personalidad. Descubre lo que hace especial a cada uno.</p>
+        </div>
+        <div class="brands__grid" id="brandsGrid"></div>
+      </div>
+    </section>
+
+    <!-- ================= SECCIÓN 5: TIPOS ================= -->
+    <section class="page page--hidden" id="view-tipos">
+      <div class="types">
+        <div class="types__header">
+          <span class="types__eyebrow">ELIGE TU FORMA DE MOVERTE</span>
+          <h1 class="types__title">Un auto para cada <span class="types__title--accent">historia.</span></h1>
+          <p class="types__subtitle">Empieza por cómo vives y encuentra la carrocería que mejor te acompaña.</p>
+        </div>
+
+        <div class="types__grid">
+          <article class="type-card" data-filter-type="SUV">
+            <img class="type-card__img" src="https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?auto=format&fit=crop&w=800&q=80" alt="SUV">
+            <div class="type-card__overlay">
+              <span class="type-card__badge">9 modelos</span>
+              <h3 class="type-card__title">SUV</h3>
+              <p class="type-card__desc">Espacio, comodidad y una posición de manejo elevada.</p>
+              <span class="type-card__link">Explorar →</span>
+            </div>
+          </article>
+
+          <article class="type-card" data-filter-type="Sedán">
+            <img class="type-card__img" src="https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&w=800&q=80" alt="Sedán">
+            <div class="type-card__overlay">
+              <span class="type-card__badge">9 modelos</span>
+              <h3 class="type-card__title">Sedán</h3>
+              <p class="type-card__desc">Eficiencia y equilibrio para cada trayecto.</p>
+              <span class="type-card__link">Explorar →</span>
+            </div>
+          </article>
+
+          <article class="type-card" data-filter-type="Eléctrico">
+            <img class="type-card__img" src="https://images.unsplash.com/photo-1560958089-b8a1929cea89?auto=format&fit=crop&w=800&q=80" alt="Eléctrico">
+            <div class="type-card__overlay">
+              <span class="type-card__badge">9 modelos</span>
+              <h3 class="type-card__title">Eléctrico</h3>
+              <p class="type-card__desc">Movilidad silenciosa con tecnología de futuro.</p>
+              <span class="type-card__link">Explorar →</span>
+            </div>
+          </article>
+
+          <article class="type-card" data-filter-type="Pickup">
+            <img class="type-card__img" src="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=800&q=80" alt="Pickup">
+            <div class="type-card__overlay">
+              <span class="type-card__badge">3 modelos</span>
+              <h3 class="type-card__title">Pickup</h3>
+              <p class="type-card__desc">Fuerza, capacidad de carga y presencia imparable.</p>
+              <span class="type-card__link">Explorar →</span>
+            </div>
+          </article>
+
+          <article class="type-card" data-filter-type="Híbrido">
+            <img class="type-card__img" src="https://images.unsplash.com/photo-1621007947382-bb3c3994e3fb?auto=format&fit=crop&w=800&q=80" alt="Híbrido">
+            <div class="type-card__overlay">
+              <span class="type-card__badge">10 modelos</span>
+              <h3 class="type-card__title">Híbrido</h3>
+              <p class="type-card__desc">Menor consumo con libertad para viajar.</p>
+              <span class="type-card__link">Explorar →</span>
+            </div>
+          </article>
+
+          <article class="type-card" data-filter-type="Crossover">
+            <img class="type-card__img" src="https://images.unsplash.com/photo-1617788138017-80ad40651399?auto=format&fit=crop&w=800&q=80" alt="Crossover">
+            <div class="type-card__overlay">
+              <span class="type-card__badge">8 modelos</span>
+              <h3 class="type-card__title">Crossover</h3>
+              <p class="type-card__desc">Agilidad urbana con versatilidad para escapadas.</p>
+              <span class="type-card__link">Explorar →</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= SECCIÓN 6: ELÉCTRICOS ================= -->
+    <section class="page page--hidden" id="view-electricos">
+      <div class="electric-hero">
+        <div class="electric-hero__container">
+          <div>
+            <span class="electric-hero__eyebrow">⚡ CATÁLOGO ELÉCTRICO</span>
+            <h1 class="electric-hero__title">El futuro ya está <span class="electric-hero__title--accent">en movimiento.</span></h1>
+            <p class="electric-hero__subtitle">Explora todos los modelos eléctricos de nuestro catálogo, sin precios y sin presión.</p>
+          </div>
+          <div class="electric-hero__counter">
+            <span class="electric-hero__number" id="electricCount">9</span>
+            <span>modelos eléctricos</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="catalog">
+        <div class="filters">
+          <input type="text" class="filters__search" id="electricSearch" placeholder="Buscar eléctrico por marca o modelo...">
+        </div>
+        <div class="catalog__grid" id="electricGrid"></div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ================= MODAL DETALLES / FAVORITOS ================= -->
+  <div class="modal modal--hidden" id="detailModal">
+    <div class="modal__box">
+      <button type="button" class="modal__close" id="closeModalBtn">×</button>
+      <div id="modalBody"></div>
+    </div>
+  </div>
+
+  <!-- ================= FOOTER (BEM) ================= -->
+  <footer class="footer">
+    <div class="footer__container">
+      <div class="footer__brand">
+        <div class="footer__logo-row">
+          <span class="header__logo">
+            <svg class="header__logo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+              <circle cx="12" cy="12" r="9"></circle>
+              <circle cx="12" cy="12" r="2.5"></circle>
+              <line x1="12" y1="3" x2="12" y2="9.5"></line>
+              <line x1="4.2" y1="16.5" x2="9.8" y2="13.2"></line>
+              <line x1="19.8" y1="16.5" x2="14.2" y2="13.2"></line>
+            </svg>
+          </span>
+          <span class="footer__title">RODAR</span>
+        </div>
+        <p class="footer__tagline">Autos claros.<br>Decisiones más simples.</p>
+      </div>
+
+      <div class="footer__links">
+        <div class="footer__col">
+          <h4 class="footer__heading">EXPLORAR</h4>
+          <a href="#catalogo" class="footer__link" data-route="catalogo">Catálogo</a>
+          <a href="#marcas" class="footer__link" data-route="marcas">Marcas</a>
+          <a href="#tipos" class="footer__link" data-route="tipos">Tipos de auto</a>
+        </div>
+        <div class="footer__col">
+          <h4 class="footer__heading">DECIDIR</h4>
+          <a href="#comparar" class="footer__link" data-route="comparar">Comparador</a>
+          <a href="#electricos" class="footer__link" data-route="electricos">Catálogo eléctrico</a>
+          <a href="#favoritos" class="footer__link" id="footerFavLink">Favoritos</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      © 2026 Rodar. Hecho para quienes disfrutan el camino.
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
 </body>
 </html>
