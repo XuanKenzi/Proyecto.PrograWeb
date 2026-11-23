@@ -32,6 +32,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: relative;
 }
 
 .header__brand {
@@ -99,6 +100,12 @@ body {
   border-radius: 2px;
 }
 
+.header__actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
 .header__favorites {
   position: relative;
   width: 38px;
@@ -132,6 +139,17 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.header__toggle {
+  display: none;
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  border: 1px solid #e7e5e4;
+  background: #ffffff;
+  font-size: 1.1rem;
+  cursor: pointer;
 }
 
 /* ================= UTILIDADES ================= */
@@ -249,6 +267,7 @@ body {
   height: 400px;
   object-fit: cover;
   border-radius: 24px;
+  background-color: #e7e5e4;
 }
 
 .hero__floating-card {
@@ -478,21 +497,22 @@ body {
 
 .car-card__media {
   position: relative;
-  height: 195px;
-  background: #1c1917;
+  height: 200px;
+  background: #e7e5e4;
 }
 
 .car-card__img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  display: block;
 }
 
 .car-card__year {
   position: absolute;
   top: 12px;
   left: 12px;
-  background: rgba(24, 24, 27, 0.8);
+  background: rgba(24, 24, 27, 0.82);
   color: #ffffff;
   font-size: 0.75rem;
   font-weight: 600;
@@ -515,6 +535,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
 }
 
 .car-card__fav--active {
@@ -958,7 +979,31 @@ body {
   .filters__controls {
     grid-template-columns: 1fr;
   }
-  .header__menu {
+
+  .header__toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .header__nav {
     display: none;
+    position: absolute;
+    top: 68px;
+    left: 0;
+    right: 0;
+    background: #faf8f5;
+    border-bottom: 1px solid #e7e5e4;
+    padding: 16px 24px;
+  }
+
+  .header__nav--open {
+    display: block;
+  }
+
+  .header__menu {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
   }
 }

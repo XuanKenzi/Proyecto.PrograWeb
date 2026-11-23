@@ -1,48 +1,55 @@
 const carsData = [
-  // TOYOTA (10 modelos)
-  { id: 1, brand: "TOYOTA", name: "RAV4 Hybrid", year: 2025, type: "SUV", fuel: "Híbrido", hp: "219 hp", speed: "180 km/h", seats: "5 personas", score: "9.2 / 10", ideal: "Familias activas", desc: "Eficiente, espaciosa y preparada para cualquier ruta.", img: "https://images.unsplash.com/photo-1621007947382-bb3c3994e3fb?auto=format&fit=crop&w=700&q=80" },
-  { id: 2, brand: "TOYOTA", name: "Corolla", year: 2025, type: "Sedán", fuel: "Gasolina", hp: "169 hp", speed: "195 km/h", seats: "5 personas", score: "8.9 / 10", ideal: "Ciudad y uso diario", desc: "Confiabilidad probada con tecnología intuitiva.", img: "https://images.unsplash.com/photo-1623869675781-80aa31012a5a?auto=format&fit=crop&w=700&q=80" },
-  { id: 3, brand: "TOYOTA", name: "4Runner", year: 2025, type: "SUV", fuel: "Gasolina", hp: "278 hp", speed: "185 km/h", seats: "7 personas", score: "9.1 / 10", ideal: "Aventura y familia", desc: "Capacidad auténtica para salir del asfalto con toda la familia.", img: "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=700&q=80" },
-  { id: 4, brand: "TOYOTA", name: "Camry Hybrid", year: 2025, type: "Sedán", fuel: "Híbrido", hp: "225 hp", speed: "210 km/h", seats: "5 personas", score: "9.1 / 10", ideal: "Confort ejecutivo", desc: "Sedán amplio, silencioso y eficiente para recorrer largas distancias.", img: "https://images.unsplash.com/photo-1619767886558-efdc259cde1a?auto=format&fit=crop&w=700&q=80" },
-  { id: 5, brand: "TOYOTA", name: "bZ4X", year: 2025, type: "Crossover", fuel: "Eléctrico", hp: "214 hp", speed: "160 km/h", seats: "5 personas", score: "8.6 / 10", ideal: "Movilidad cero emisiones", desc: "Crossover eléctrico espacioso, sereno y fácil de conducir.", img: "https://images.unsplash.com/photo-1593941707882-a5bba14938c7?auto=format&fit=crop&w=700&q=80" },
-  { id: 6, brand: "TOYOTA", name: "Hilux", year: 2025, type: "Pickup", fuel: "Gasolina", hp: "204 hp", speed: "175 km/h", seats: "5 personas", score: "9.0 / 10", ideal: "Trabajo y rutas exigentes", desc: "Pickup robusta y confiable, lista para el trabajo o los caminos difíciles.", img: "https://images.unsplash.com/photo-1559416523-140ddc3d238c?auto=format&fit=crop&w=700&q=80" },
-  { id: 7, brand: "TOYOTA", name: "Land Cruiser", year: 2025, type: "SUV", fuel: "Híbrido", hp: "326 hp", speed: "190 km/h", seats: "7 personas", score: "9.4 / 10", ideal: "Exploración de alto nivel", desc: "Capacidad legendaria, fuerza híbrida y comodidad para explorar lejos.", img: "https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?auto=format&fit=crop&w=700&q=80" },
-  { id: 8, brand: "TOYOTA", name: "Prius", year: 2025, type: "Sedán", fuel: "Híbrido", hp: "196 hp", speed: "180 km/h", seats: "5 personas", score: "9.0 / 10", ideal: "Máximo ahorro de combustible", desc: "Eficiencia híbrida de referencia con un diseño más dinámico y moderno.", img: "https://images.unsplash.com/photo-1606611013016-969c19ba27bb?auto=format&fit=crop&w=700&q=80" },
-  { id: 9, brand: "TOYOTA", name: "Yaris Cross Hybrid", year: 2025, type: "SUV", fuel: "Híbrido", hp: "116 hp", speed: "170 km/h", seats: "5 personas", score: "8.7 / 10", ideal: "Ciudad y estacionamiento ágil", desc: "SUV híbrida compacta, eficiente y fácil de disfrutar en la ciudad.", img: "https://images.unsplash.com/photo-1568844293986-8d0400bd4745?auto=format&fit=crop&w=700&q=80" },
-  { id: 10, brand: "TOYOTA", name: "Tacoma", year: 2025, type: "Pickup", fuel: "Híbrido", hp: "326 hp", speed: "180 km/h", seats: "5 personas", score: "9.1 / 10", ideal: "Aventura todoterreno", desc: "Pickup mediana potente, tecnológica y preparada para salir del asfalto.", img: "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=700&q=80" },
+  // TOYOTA (10 modelos - cada uno con foto real única)
+  { id: 1, brand: "TOYOTA", name: "RAV4 Hybrid", year: 2025, type: "SUV", fuel: "Híbrido", hp: "219 hp", speed: "180 km/h", seats: "5 personas", score: "9.2 / 10", ideal: "Familias activas", desc: "Eficiente, espaciosa y preparada para cualquier ruta.", img: "https://commons.wikimedia.org/wiki/Special:FilePath/2024_Toyota_RAV4_Cruiser_Hybrid_front.jpg?width=800" },
+  { id: 2, brand: "TOYOTA", name: "Corolla", year: 2025, type: "Sedán", fuel: "Gasolina", hp: "169 hp", speed: "195 km/h", seats: "5 personas", score: "8.9 / 10", ideal: "Ciudad y uso diario", desc: "Confiabilidad probada con tecnología intuitiva.", img: "https://commons.wikimedia.org/wiki/Special:FilePath/Toyota_Corolla_(E210)_sedan_IMG_3379.jpg?width=800" },
+  { id: 3, brand: "TOYOTA", name: "4Runner", year: 2025, type: "Todoterreno", fuel: "Gasolina", hp: "278 hp", speed: "185 km/h", seats: "7 personas", score: "9.1 / 10", ideal: "Aventura y familia", desc: "Capacidad auténtica para salir del asfalto con toda la familia.", img: "https://commons.wikimedia.org/wiki/Special:FilePath/Toyota_4Runner_2026_3.jpg?width=800" },
+  { id: 4, brand: "TOYOTA", name: "Camry Hybrid", year: 2025, type: "Sedán", fuel: "Híbrido", hp: "225 hp", speed: "210 km/h", seats: "5 personas", score: "9.1 / 10", ideal: "Confort ejecutivo", desc: "Sedán amplio, silencioso y eficiente para recorrer largas distancias.", img: "https://commons.wikimedia.org/wiki/Special:FilePath/Toyota_Camry_(XV80)_181233201.jpg?width=800" },
+  { id: 5, brand: "TOYOTA", name: "bZ4X", year: 2025, type: "Crossover", fuel: "Eléctrico", hp: "214 hp", speed: "160 km/h", seats: "5 personas", score: "8.6 / 10", ideal: "Movilidad cero emisiones", desc: "Crossover eléctrico espacioso, sereno y fácil de conducir.", img: "https://commons.wikimedia.org/wiki/Special:FilePath/2026_Toyota_bZ4X_IMG_5806.jpg?width=800" },
+  { id: 6, brand: "TOYOTA", name: "Hilux", year: 2025, type: "Pickup", fuel: "Gasolina", hp: "204 hp", speed: "175 km/h", seats: "5 personas", score: "9.0 / 10", ideal: "Trabajo y rutas exigentes", desc: "Pickup robusta y confiable, lista para el trabajo o los caminos difíciles.", img: "https://commons.wikimedia.org/wiki/Special:FilePath/Toyota_Hilux_4x2_G_2023_(1).jpg?width=800" },
+  { id: 7, brand: "TOYOTA", name: "Land Cruiser", year: 2025, type: "Todoterreno", fuel: "Híbrido", hp: "326 hp", speed: "190 km/h", seats: "7 personas", score: "9.4 / 10", ideal: "Exploración de alto nivel", desc: "Capacidad legendaria, fuerza híbrida y comodidad para explorar lejos.", img: "https://commons.wikimedia.org/wiki/Special:FilePath/TOYOTA_LAND_CRUISER_PRADO_(J250)_China.jpg?width=800" },
+  { id: 8, brand: "TOYOTA", name: "Prius", year: 2025, type: "Sedán", fuel: "Híbrido", hp: "196 hp", speed: "180 km/h", seats: "5 personas", score: "9.0 / 10", ideal: "Máximo ahorro de combustible", desc: "Eficiencia híbrida de referencia con un diseño más dinámico y moderno.", img: "https://commons.wikimedia.org/wiki/Special:FilePath/Toyota_Prius_(XW60)_Plug-in_Hybrid_IMG_9905.jpg?width=800" },
+  { id: 9, brand: "TOYOTA", name: "Yaris Cross Hybrid", year: 2025, type: "SUV", fuel: "Híbrido", hp: "116 hp", speed: "170 km/h", seats: "5 personas", score: "8.7 / 10", ideal: "Ciudad y estacionamiento ágil", desc: "SUV híbrida compacta, eficiente y fácil de disfrutar en la ciudad.", img: "https://commons.wikimedia.org/wiki/Special:FilePath/Toyota_Yaris_Cross_1.5_G_2023_(9).jpg?width=800" },
+  { id: 10, brand: "TOYOTA", name: "Tacoma", year: 2025, type: "Pickup", fuel: "Híbrido", hp: "326 hp", speed: "180 km/h", seats: "5 personas", score: "9.1 / 10", ideal: "Aventura todoterreno", desc: "Pickup mediana potente, tecnológica y preparada para salir del asfalto.", img: "https://commons.wikimedia.org/wiki/Special:FilePath/Toyota_Tacoma_TRD_Double_Cab.jpg?width=800" },
 
-  // HONDA (4 modelos)
-  { id: 11, brand: "HONDA", name: "Civic", year: 2025, type: "Sedán", fuel: "Híbrido", hp: "200 hp", speed: "200 km/h", seats: "5 personas", score: "9.0 / 10", ideal: "Ciudad y carretera", desc: "Ágil, refinado y equilibrado para disfrutar cada kilómetro.", img: "https://images.unsplash.com/photo-1606611013016-969c19ba27bb?auto=format&fit=crop&w=700&q=80" },
-  { id: 12, brand: "HONDA", name: "CR-V Hybrid", year: 2025, type: "SUV", fuel: "Híbrido", hp: "204 hp", speed: "185 km/h", seats: "5 personas", score: "9.2 / 10", ideal: "Familias y comodidad", desc: "Una SUV familiar refinada, versátil y de consumo contenido.", img: "https://images.unsplash.com/photo-1568844293986-8d0400bd4745?auto=format&fit=crop&w=700&q=80" },
-  { id: 13, brand: "HONDA", name: "HR-V", year: 2025, type: "Crossover", fuel: "Gasolina", hp: "158 hp", speed: "185 km/h", seats: "5 personas", score: "8.7 / 10", ideal: "Movilidad urbana", desc: "Tamaño urbano, cabina práctica y conducción muy sencilla.", img: "https://images.unsplash.com/photo-1617788138017-80ad40651399?auto=format&fit=crop&w=700&q=80" },
-  { id: 14, brand: "HONDA", name: "Prologue", year: 2025, type: "Crossover", fuel: "Eléctrico", hp: "288 hp", speed: "180 km/h", seats: "5 personas", score: "8.9 / 10", ideal: "Espacio eléctrico familiar", desc: "SUV eléctrica de gran espacio con una experiencia tecnológica limpia.", img: "https://images.unsplash.com/photo-1593941707882-a5bba14938c7?auto=format&fit=crop&w=700&q=80" },
+  // HONDA (4 modelos - cada uno con foto real única)
+  { id: 11, brand: "HONDA", name: "Civic", year: 2025, type: "Sedán", fuel: "Híbrido", hp: "200 hp", speed: "200 km/h", seats: "5 personas", score: "9.0 / 10", ideal: "Ciudad y carretera", desc: "Ágil, refinado y equilibrado para disfrutar cada kilómetro.", img: "https://commons.wikimedia.org/wiki/Special:FilePath/Honda_Civic_FE4_FL_2.0_RS_e-HEV_Canyon_River_Blue.jpg?width=800" },
+  { id: 12, brand: "HONDA", name: "CR-V Hybrid", year: 2025, type: "SUV", fuel: "Híbrido", hp: "204 hp", speed: "185 km/h", seats: "5 personas", score: "9.2 / 10", ideal: "Familias y comodidad", desc: "Una SUV familiar refinada, versátil y de consumo contenido.", img: "https://commons.wikimedia.org/wiki/Special:FilePath/2023_Honda_CR-V_e-HEV_RS_4WD.jpg?width=800" },
+  { id: 13, brand: "HONDA", name: "HR-V", year: 2025, type: "Crossover", fuel: "Gasolina", hp: "158 hp", speed: "185 km/h", seats: "5 personas", score: "8.7 / 10", ideal: "Movilidad urbana", desc: "Tamaño urbano, cabina práctica y conducción muy sencilla.", img: "https://commons.wikimedia.org/wiki/Special:FilePath/Honda_HR-V_RZ_01_China_2023-04-15.jpg?width=800" },
+  { id: 14, brand: "HONDA", name: "Prologue", year: 2025, type: "Crossover", fuel: "Eléctrico", hp: "288 hp", speed: "180 km/h", seats: "5 personas", score: "8.9 / 10", ideal: "Espacio eléctrico familiar", desc: "SUV eléctrica de gran espacio con una experiencia tecnológica limpia.", img: "https://commons.wikimedia.org/wiki/Special:FilePath/2024_Honda_Prologue.jpg?width=800" },
 
-  // MAZDA (3 modelos)
-  { id: 15, brand: "MAZDA", name: "CX-50", year: 2025, type: "SUV", fuel: "Gasolina", hp: "256 hp", speed: "210 km/h", seats: "5 personas", score: "9.0 / 10", ideal: "Conducción dinámica", desc: "Diseño envolvente y manejo preciso en cada curva.", img: "https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?auto=format&fit=crop&w=700&q=80" },
-  { id: 16, brand: "MAZDA", name: "Mazda3", year: 2025, type: "Sedán", fuel: "Gasolina", hp: "191 hp", speed: "205 km/h", seats: "5 personas", score: "8.9 / 10", ideal: "Estilo y precisión", desc: "Acabados cuidados y manejo preciso en un sedán compacto.", img: "https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&w=700&q=80" },
-  { id: 17, brand: "MAZDA", name: "CX-30", year: 2025, type: "Crossover", fuel: "Gasolina", hp: "186 hp", speed: "198 km/h", seats: "5 personas", score: "8.8 / 10", ideal: "Ciudad con toque deportivo", desc: "Agilidad urbana con interior refinado y respuesta inmediata.", img: "https://images.unsplash.com/photo-1614200187524-dc4b892acf16?auto=format&fit=crop&w=700&q=80" },
+  // MAZDA (3 modelos - cada uno con foto real única)
+  { id: 15, brand: "MAZDA", name: "CX-50", year: 2025, type: "SUV", fuel: "Gasolina", hp: "256 hp", speed: "210 km/h", seats: "5 personas", score: "9.0 / 10", ideal: "Conducción dinámica", desc: "Diseño envolvente y manejo preciso en cada curva.", img: "https://commons.wikimedia.org/wiki/Special:FilePath/Mazda_CX-50_(52534655682).jpg?width=800" },
+  { id: 16, brand: "MAZDA", name: "Mazda3", year: 2025, type: "Sedán", fuel: "Gasolina", hp: "191 hp", speed: "205 km/h", seats: "5 personas", score: "8.9 / 10", ideal: "Estilo y precisión", desc: "Acabados cuidados y manejo preciso en un sedán compacto.", img: "https://commons.wikimedia.org/wiki/Special:FilePath/MAZDA3_SEDAN_(BP)_China.jpg?width=800" },
+  { id: 17, brand: "MAZDA", name: "CX-30", year: 2025, type: "Crossover", fuel: "Gasolina", hp: "186 hp", speed: "198 km/h", seats: "5 personas", score: "8.8 / 10", ideal: "Ciudad con toque deportivo", desc: "Agilidad urbana con interior refinado y respuesta inmediata.", img: "https://commons.wikimedia.org/wiki/Special:FilePath/2020_Mazda_CX-30_Preferred_AWD,_front_left.jpg?width=800" },
 
-  // HYUNDAI (4 modelos)
-  { id: 18, brand: "HYUNDAI", name: "Ioniq 5", year: 2025, type: "Crossover", fuel: "Eléctrico", hp: "320 hp", speed: "185 km/h", seats: "5 personas", score: "9.4 / 10", ideal: "Tecnología y carga rápida", desc: "Tecnología eléctrica, carga rápida y un interior sorprendente.", img: "https://images.unsplash.com/photo-1560958089-b8a1929cea89?auto=format&fit=crop&w=700&q=80" },
-  { id: 19, brand: "HYUNDAI", name: "Kona", year: 2025, type: "Crossover", fuel: "Híbrido", hp: "141 hp", speed: "172 km/h", seats: "5 personas", score: "8.8 / 10", ideal: "Entorno urbano", desc: "Crossover compacto, práctico y lleno de personalidad.", img: "https://images.unsplash.com/photo-1617788138017-80ad40651399?auto=format&fit=crop&w=700&q=80" },
-  { id: 20, brand: "HYUNDAI", name: "Tucson Hybrid", year: 2025, type: "SUV", fuel: "Híbrido", hp: "231 hp", speed: "190 km/h", seats: "5 personas", score: "9.0 / 10", ideal: "Tecnología familiar", desc: "Diseño vanguardista con amplio espacio y asistencia inteligente.", img: "https://images.unsplash.com/photo-1621007947382-bb3c3994e3fb?auto=format&fit=crop&w=700&q=80" },
-  { id: 21, brand: "HYUNDAI", name: "Elantra", year: 2025, type: "Sedán", fuel: "Gasolina", hp: "147 hp", speed: "195 km/h", seats: "5 personas", score: "8.6 / 10", ideal: "Trayectos diarios", desc: "Sedán moderno, cómodo y equipado con pantallas digitales.", img: "https://images.unsplash.com/photo-1623869675781-80aa31012a5a?auto=format&fit=crop&w=700&q=80" },
+  // HYUNDAI (4 modelos - cada uno con foto real única)
+  { id: 18, brand: "HYUNDAI", name: "Ioniq 5", year: 2025, type: "Crossover", fuel: "Eléctrico", hp: "320 hp", speed: "185 km/h", seats: "5 personas", score: "9.4 / 10", ideal: "Tecnología y carga rápida", desc: "Tecnología eléctrica, carga rápida y un interior sorprendente.", img: "https://commons.wikimedia.org/wiki/Special:FilePath/Hyundai_Ioniq_5.jpg?width=800" },
+  { id: 19, brand: "HYUNDAI", name: "Kona", year: 2025, type: "Crossover", fuel: "Híbrido", hp: "141 hp", speed: "172 km/h", seats: "5 personas", score: "8.8 / 10", ideal: "Entorno urbano", desc: "Crossover compacto, práctico y lleno de personalidad.", img: "https://commons.wikimedia.org/wiki/Special:FilePath/Hyundai_Kona_Electric_(SX2)_IMG_3852_(cropped).jpg?width=800" },
+  { id: 20, brand: "HYUNDAI", name: "Tucson Hybrid", year: 2025, type: "SUV", fuel: "Híbrido", hp: "231 hp", speed: "190 km/h", seats: "5 personas", score: "9.0 / 10", ideal: "Tecnología familiar", desc: "Diseño vanguardista con amplio espacio y asistencia inteligente.", img: "https://commons.wikimedia.org/wiki/Special:FilePath/Hyundai_Tucson_152251.jpg?width=800" },
+  { id: 21, brand: "HYUNDAI", name: "Elantra", year: 2025, type: "Sedán", fuel: "Gasolina", hp: "147 hp", speed: "195 km/h", seats: "5 personas", score: "8.6 / 10", ideal: "Trayectos diarios", desc: "Sedán moderno, cómodo y equipado con pantallas digitales.", img: "https://commons.wikimedia.org/wiki/Special:FilePath/Hyundai_Elantra_(CN7)185046.jpg?width=800" },
 
-  // KIA (3 modelos)
-  { id: 22, brand: "KIA", name: "EV6", year: 2025, type: "Crossover", fuel: "Eléctrico", hp: "320 hp", speed: "192 km/h", seats: "5 personas", score: "9.3 / 10", ideal: "Diseño deportivo eléctrico", desc: "Carga rápida, diseño distintivo y excelente respuesta eléctrica.", img: "https://images.unsplash.com/photo-1614200187524-dc4b892acf16?auto=format&fit=crop&w=700&q=80" },
-  { id: 23, brand: "KIA", name: "K5", year: 2025, type: "Sedán", fuel: "Gasolina", hp: "191 hp", speed: "210 km/h", seats: "5 personas", score: "8.8 / 10", ideal: "Estilo deportivo", desc: "Imagen deportiva, buen espacio y conducción agradable.", img: "https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&w=700&q=80" },
-  { id: 24, brand: "KIA", name: "Sportage Hybrid", year: 2025, type: "SUV", fuel: "Híbrido", hp: "227 hp", speed: "188 km/h", seats: "5 personas", score: "9.0 / 10", ideal: "Versatilidad diaria", desc: "SUV equilibrada, cómoda y con gran capacidad de maletero.", img: "https://images.unsplash.com/photo-1568844293986-8d0400bd4745?auto=format&fit=crop&w=700&q=80" },
+  // KIA (3 modelos - cada uno con foto real única)
+  { id: 22, brand: "KIA", name: "EV6", year: 2025, type: "Crossover", fuel: "Eléctrico", hp: "320 hp", speed: "192 km/h", seats: "5 personas", score: "9.3 / 10", ideal: "Diseño deportivo eléctrico", desc: "Carga rápida, diseño distintivo y excelente respuesta eléctrica.", img: "https://commons.wikimedia.org/wiki/Special:FilePath/Kia_EV6_CV_Snow_White_Pearl_(5)_(cropped).jpg?width=800" },
+  { id: 23, brand: "KIA", name: "K5", year: 2025, type: "Sedán", fuel: "Gasolina", hp: "191 hp", speed: "210 km/h", seats: "5 personas", score: "8.8 / 10", ideal: "Estilo deportivo", desc: "Imagen deportiva, buen espacio y conducción agradable.", img: "https://commons.wikimedia.org/wiki/Special:FilePath/KIA_K5_(DL3)_China.jpg?width=800" },
+  { id: 24, brand: "KIA", name: "Sportage Hybrid", year: 2025, type: "SUV", fuel: "Híbrido", hp: "227 hp", speed: "188 km/h", seats: "5 personas", score: "9.0 / 10", ideal: "Versatilidad diaria", desc: "SUV equilibrada, cómoda y con gran capacidad de maletero.", img: "https://commons.wikimedia.org/wiki/Special:FilePath/Kia_Sportage_Hybrid_NQ5_white_(1).jpg?width=800" },
 
-  // TESLA (5 modelos)
-  { id: 25, brand: "TESLA", name: "Model Y Long Range", year: 2025, type: "SUV", fuel: "Eléctrico", hp: "384 hp", speed: "217 km/h", seats: "5 personas", score: "9.3 / 10", ideal: "Autonomía y familia", desc: "SUV eléctrica espaciosa, eficiente y preparada para la vida familiar.", img: "https://images.unsplash.com/photo-1560958089-b8a1929cea89?auto=format&fit=crop&w=700&q=80" },
-  { id: 26, brand: "TESLA", name: "Model S Plaid", year: 2025, type: "Sedán", fuel: "Eléctrico", hp: "1,020 hp", speed: "322 km/h", seats: "5 personas", score: "9.6 / 10", ideal: "Máximo rendimiento", desc: "Prestaciones extraordinarias con una cabina amplia y silenciosa.", img: "https://images.unsplash.com/photo-1617788138017-80ad40651399?auto=format&fit=crop&w=700&q=80" },
-  { id: 27, brand: "TESLA", name: "Cybertruck AWD", year: 2025, type: "Pickup", fuel: "Eléctrico", hp: "600 hp", speed: "180 km/h", seats: "5 personas", score: "9.0 / 10", ideal: "Fuerza y estilo único", desc: "Pickup eléctrica de diseño radical, gran fuerza y enorme versatilidad.", img: "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=700&q=80" },
-  { id: 28, brand: "TESLA", name: "Model 3 Long Range", year: 2025, type: "Sedán", fuel: "Eléctrico", hp: "366 hp", speed: "201 km/h", seats: "5 personas", score: "9.2 / 10", ideal: "Eficiencia y tecnología", desc: "Gran autonomía, aceleración inmediata y tecnología minimalista.", img: "https://images.unsplash.com/photo-1619767886558-efdc259cde1a?auto=format&fit=crop&w=700&q=80" },
-  { id: 29, brand: "TESLA", name: "Model X", year: 2025, type: "Crossover", fuel: "Eléctrico", hp: "670 hp", speed: "250 km/h", seats: "6 personas", score: "9.1 / 10", ideal: "Tecnología y espacio", desc: "Puertas Falcon Wing, gran potencia y comodidad para toda la familia.", img: "https://images.unsplash.com/photo-1593941707882-a5bba14938c7?auto=format&fit=crop&w=700&q=80" }
+  // TESLA (5 modelos - cada uno con foto real única)
+  { id: 25, brand: "TESLA", name: "Model Y Long Range", year: 2025, type: "SUV", fuel: "Eléctrico", hp: "384 hp", speed: "217 km/h", seats: "5 personas", score: "9.3 / 10", ideal: "Autonomía y familia", desc: "SUV eléctrica espaciosa, eficiente y preparada para la vida familiar.", img: "https://commons.wikimedia.org/wiki/Special:FilePath/2022_Tesla_Model_Y_Performance.jpg?width=800" },
+  { id: 26, brand: "TESLA", name: "Model S Plaid", year: 2025, type: "Sedán", fuel: "Eléctrico", hp: "1,020 hp", speed: "322 km/h", seats: "5 personas", score: "9.6 / 10", ideal: "Máximo rendimiento", desc: "Prestaciones extraordinarias con una cabina amplia y silenciosa.", img: "https://commons.wikimedia.org/wiki/Special:FilePath/22_Tesla_Model_S_Plaid.jpg?width=800" },
+  { id: 27, brand: "TESLA", name: "Cybertruck AWD", year: 2025, type: "Pickup", fuel: "Eléctrico", hp: "600 hp", speed: "180 km/h", seats: "5 personas", score: "9.0 / 10", ideal: "Fuerza y estilo único", desc: "Pickup eléctrica de diseño radical, gran fuerza y enorme versatilidad.", img: "https://commons.wikimedia.org/wiki/Special:FilePath/Tesla_Cybertruck.jpg?width=800" },
+  { id: 28, brand: "TESLA", name: "Model 3 Long Range", year: 2025, type: "Sedán", fuel: "Eléctrico", hp: "366 hp", speed: "201 km/h", seats: "5 personas", score: "9.2 / 10", ideal: "Eficiencia y tecnología", desc: "Gran autonomía, aceleración inmediata y tecnología minimalista.", img: "https://commons.wikimedia.org/wiki/Special:FilePath/Tesla_Model_3_Highland_Dual_Motor_AWD_Ultra_Red_01.jpg?width=800" },
+  { id: 29, brand: "TESLA", name: "Model X", year: 2025, type: "Crossover", fuel: "Eléctrico", hp: "670 hp", speed: "250 km/h", seats: "6 personas", score: "9.1 / 10", ideal: "Tecnología y espacio", desc: "Puertas Falcon Wing, gran potencia y comodidad para toda la familia.", img: "https://commons.wikimedia.org/wiki/Special:FilePath/TESLA_MODEL_X.jpg?width=800" }
 ];
 
 let favorites = [1, 11];
 let activeType = "Todos";
+
+// Menú móvil / pantalla dividida
+const menuToggleBtn = document.getElementById("menuToggleBtn");
+const headerNav = document.getElementById("headerNav");
+menuToggleBtn.addEventListener("click", () => {
+  headerNav.classList.toggle("header__nav--open");
+});
 
 function navigateTo(route) {
   document.querySelectorAll(".page").forEach(p => p.classList.add("page--hidden"));
@@ -52,6 +59,8 @@ function navigateTo(route) {
   document.querySelectorAll(".header__link").forEach(link => {
     link.classList.toggle("header__link--active", link.dataset.route === route);
   });
+
+  headerNav.classList.remove("header__nav--open");
   window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
@@ -71,7 +80,7 @@ function createCarCard(car) {
         <button type="button" class="car-card__fav ${isFav ? "car-card__fav--active" : ""}" onclick="toggleFavorite(${car.id})">
           ${isFav ? "♥" : "♡"}
         </button>
-        <img class="car-card__img" src="${car.img}" alt="${car.name}">
+        <img class="car-card__img" src="${car.img}" alt="${car.brand} ${car.name}" loading="lazy">
       </div>
       <div class="car-card__body">
         <span class="car-card__brand">${car.brand}</span>
@@ -167,6 +176,14 @@ function renderBrands() {
       </article>
     `;
   }).join("");
+}
+
+function updateTypeBadges() {
+  document.querySelectorAll("[data-badge-type]").forEach(badge => {
+    const key = badge.dataset.badgeType;
+    const count = carsData.filter(c => c.type === key || c.fuel === key).length;
+    badge.textContent = `${count} modelos`;
+  });
 }
 
 window.filterByBrand = (brandKey) => {
@@ -292,12 +309,17 @@ document.getElementById("btnFavorites").addEventListener("click", openFavoritesM
 document.getElementById("footerFavLink").addEventListener("click", (e) => { e.preventDefault(); openFavoritesModal(); });
 document.getElementById("closeModalBtn").addEventListener("click", () => document.getElementById("detailModal").classList.add("modal--hidden"));
 
-document.getElementById("heroSearchBtn").addEventListener("click", () => {
+function executeHeroSearch() {
   const q = document.getElementById("heroSearchInput").value;
   resetAllFilters();
   navigateTo("catalogo");
   document.getElementById("catalogSearch").value = q;
   renderCatalog();
+}
+
+document.getElementById("heroSearchBtn").addEventListener("click", executeHeroSearch);
+document.getElementById("heroSearchInput").addEventListener("keydown", (e) => {
+  if (e.key === "Enter") executeHeroSearch();
 });
 
 document.querySelectorAll("[data-quick-filter]").forEach(btn => {
@@ -313,4 +335,5 @@ renderFeatured();
 renderCatalog();
 renderElectrics();
 renderBrands();
+updateTypeBadges();
 initCompare();
